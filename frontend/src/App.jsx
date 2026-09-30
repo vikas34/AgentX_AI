@@ -13,7 +13,7 @@ const App = () => {
       dispatch(setUserData(data));
     };
     getUSer();
-  }, []);
+  }, [dispatch]);
   return (
     <>
       <Home />

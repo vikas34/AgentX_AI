@@ -7,14 +7,13 @@ import { setUserData } from "../redux/userSlice";
 
 const Home = () => {
   const { userData } = useSelector((state) => state.user);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   console.log(userData);
   const handleLogin = async (token) => {
     try {
       const { data } = await api.post("/api/auth/login", { token });
       // console.log(data);
-      dispatch(setUserData(data))
-    
+      dispatch(setUserData(data));
     } catch (error) {
       console.log(error);
     }
